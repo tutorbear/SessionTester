@@ -1,0 +1,10 @@
+<resources>
+    <string name="app_name">Session Tester</string>
+
+    <string name="back4app_server_url">https://parseapi.back4app.com/</string>
+
+    <!-- Change the following strings as required -->
+    <string name="back4app_app_id">tWy0TG8ci8pnUQQUpMtKKjaMuVor3C5YyKFfUh7W</string>
+    <string name="back4app_client_key">PmwqFI7a2ht9ScHXlbSDrV10YV2RjMUWKRKGxxgb</string>
+
+</resources>
