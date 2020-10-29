@@ -1,8 +1,13 @@
 package com.example.sessiontester;
 
 import androidx.appcompat.app.AppCompatActivity;
+import androidx.emoji.text.EmojiCompat;
 
+import android.graphics.drawable.Drawable;
 import android.os.Bundle;
+import android.text.Spannable;
+import android.text.SpannableString;
+import android.text.style.ImageSpan;
 import android.util.Log;
 import android.view.View;
 import android.widget.Toast;
@@ -23,7 +28,10 @@ import org.json.JSONArray;
 import org.json.JSONException;
 
 import java.util.ArrayList;
+import java.util.Calendar;
+import java.util.Date;
 import java.util.List;
+import java.util.TimeZone;
 
 
 public class MainActivity extends AppCompatActivity {
@@ -32,7 +40,13 @@ public class MainActivity extends AppCompatActivity {
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_main);
-        Toast.makeText(this, ""+ParseInstallation.getCurrentInstallation().getInstallationId(), Toast.LENGTH_SHORT).show();;
+
+        SpannableString spannableString = new SpannableString("Let's party @");
+        Drawable d = getResources().getDrawable(R.drawable.party);
+        d.setBounds(0, 0, d.getIntrinsicWidth(), d.getIntrinsicHeight());
+        ImageSpan span = new ImageSpan(d, ImageSpan.ALIGN_BOTTOM);
+        spannableString.setSpan(span, spannableString.toString().indexOf("@"),  spannableString.toString().indexOf("@")+1, Spannable.SPAN_INCLUSIVE_EXCLUSIVE);
+
     }
 
     public void login(View view) {
@@ -67,8 +81,13 @@ public class MainActivity extends AppCompatActivity {
     public void create(View view) {
         ParseObject entity = new ParseObject("Game");
 
+        Calendar cal = Calendar.getInstance();
+//        cal.setTimeZone(TimeZone.getTimeZone("UTC"));
+        cal.add(Calendar.DAY_OF_MONTH,1);
+//        cal.add(Calendar.HOUR_OF_DAY,6);
+        Date d = cal.getTime();
         entity.put("name", "A string");
-
+        entity.put("date",d);
         // Saves the new object.
         // Notice that the SaveCallback is totally optional!
         entity.saveInBackground(new SaveCallback() {

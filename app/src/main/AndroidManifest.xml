@@ -21,7 +21,6 @@
         <activity android:name=".MainActivity2">
             
         </activity>
-        <activity android:name=".StudentCreateProfile" />
         <activity android:name=".MainActivity">
             <intent-filter>
                 <action android:name="android.intent.action.MAIN" />
@@ -29,6 +28,7 @@
                 <category android:name="android.intent.category.LAUNCHER" />
             </intent-filter>
         </activity>
+
 
         <meta-data
             android:name="com.parse.push.gcm_sender_id"
@@ -43,15 +43,14 @@
             android:name="com.parse.CLIENT_KEY"
             android:value="@string/back4app_client_key" />
 
-        <service android:name=".MyMessagingService">
+        <service
+            android:name="com.parse.fcm.ParseFirebaseMessagingService">
             <intent-filter>
-                <action android:name="com.google.firebase.MESSAGING_EVENT" />
+                <action android:name="com.google.firebase.MESSAGING_EVENT"/>
             </intent-filter>
         </service>
 
-        <receiver
-            android:name="com.parse.ParsePushBroadcastReceiver"
-            android:exported="false">
+        <receiver android:name=".myPushRe" android:exported="false">
             <intent-filter>
                 <action android:name="com.parse.push.intent.RECEIVE" />
                 <action android:name="com.parse.push.intent.OPEN" />
