@@ -3,9 +3,6 @@ package com.example.sessiontester;
 import android.app.Application;
 import android.widget.Toast;
 
-import androidx.core.provider.FontRequest;
-import androidx.emoji.text.EmojiCompat;
-import androidx.emoji.text.FontRequestEmojiCompatConfig;
 
 import com.parse.Parse;
 import com.parse.ParseException;

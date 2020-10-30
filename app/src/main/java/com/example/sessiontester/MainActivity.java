@@ -1,7 +1,6 @@
 package com.example.sessiontester;
 
 import androidx.appcompat.app.AppCompatActivity;
-import androidx.emoji.text.EmojiCompat;
 
 import android.graphics.drawable.Drawable;
 import android.os.Bundle;

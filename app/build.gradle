@@ -39,13 +39,13 @@ dependencies {
     implementation "com.github.parse-community.Parse-SDK-Android:fcm:1.24.2"
     implementation 'com.parse.bolts:bolts-android:1.4.0'
 
+    implementation 'com.squareup.picasso:picasso:2.71828'
+
     //For Glide
     implementation 'com.github.bumptech.glide:glide:4.11.0'
     annotationProcessor 'com.github.bumptech.glide:compiler:4.10.0'
     //----------------->
 
-    //Emoji compact
-    implementation "androidx.emoji:emoji:1.1.0"
 
     implementation 'com.squareup.picasso:picasso:2.71828'
 }
